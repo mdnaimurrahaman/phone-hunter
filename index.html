@@ -18,9 +18,17 @@
 </head>
 <body>
     <div class="container my-5">
+        <!-- logo -->
         <div class="d-flex justify-content-center align-items-center mb-4 ">
             <img class="logo w-50" src="2756308.png" alt="" srcset="">
         </div>
+        <!-- search button -->
+        <div class="d-flex">
+            <input id="search-box" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button onclick="allPlayers()" id="search-btn" class="btn btn-outline-success" type="submit">Search</button>
+        </div>
+        <!-- error text -->
+        <p id="error"></p>
     </div>
     <script src="JS/app.js"></script>
 </body>
