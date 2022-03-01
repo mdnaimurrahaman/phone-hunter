@@ -1,3 +1,4 @@
+const error = document.getElementById('error');
 const searchPhones = () => {
     const input = document.getElementById('search-box');
     const inputValue = input.value;
@@ -7,10 +8,23 @@ const searchPhones = () => {
         input.value='';
         mainDiv.innerHTML="";
     }
+    else if(inputValue<0){
+      error.innerText='please search by phone name.';
+    }
     else{
     fetch(`https://openapi.programming-hero.com/api/phones?search=${inputValue}`)
         .then(res => res.json())
-        .then(data => phoneDisplay(data.data))
+        .then(data =>{
+          if(data.data.length===0){
+            error.innerText="No result found...!"
+            document.getElementById('main').innerHTML='';
+            document.getElementById('phone-details').innerHTML='';
+          }
+          else{
+            phoneDisplay(data.data.slice(0,20))
+            error.innerText = "";
+          }
+        })
 
         // error handling
         input.value='';
@@ -20,6 +34,8 @@ const searchPhones = () => {
 const phoneDisplay = (phones) =>{
     // console.log(phones)
     const mainDiv = document.getElementById('main')
+    document.getElementById('main').innerHTML='';
+    document.getElementById('phone-details').innerHTML='';
     phones.forEach(phone =>{
         // console.log(phone)
         const div = document.createElement('div');
@@ -60,7 +76,7 @@ const showDetail = (info)=>{
             <div class="card-body text-center">
               <h2 class="card-title fw-bold"> ${info.brand}</h2>
               <h5 class="card-text fw-bold"> ${info.name} Full Specifications</h5>
-              <p class="card-text"> <span class="">First Release:</span> ${info.releaseDate}</p>
+              <p class="card-text"> <span class="">First Release:</span> ${info.releaseDate? info.releaseDate:"no releas date found"}</p>
             </div>
             <div class="p-4 info-bg mb-3">
             <h5 class="text-center card-title fw-bold mb-4">MAIN FEATURES</h5>
