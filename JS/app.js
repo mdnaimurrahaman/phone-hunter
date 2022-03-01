@@ -9,7 +9,7 @@ const searchPhones = () => {
         mainDiv.innerHTML="";
     }
     else if(inputValue<0){
-      error.innerText='please search by phone name.';
+      error.innerText='please only search by phone name.';
     }
     else{
     fetch(`https://openapi.programming-hero.com/api/phones?search=${inputValue}`)
@@ -17,6 +17,7 @@ const searchPhones = () => {
         .then(data =>{
           if(data.data.length===0){
             error.innerText="No result found...!"
+            // display clear
             document.getElementById('main').innerHTML='';
             document.getElementById('phone-details').innerHTML='';
           }
@@ -25,19 +26,17 @@ const searchPhones = () => {
             error.innerText = "";
           }
         })
-
-        // error handling
+        // display clear
         input.value='';
         error.innerHTML = "";
     } 
 }
 const phoneDisplay = (phones) =>{
-    // console.log(phones)
-    const mainDiv = document.getElementById('main')
+    const mainDiv = document.getElementById('main');
+    // display clear
     document.getElementById('main').innerHTML='';
     document.getElementById('phone-details').innerHTML='';
     phones.forEach(phone =>{
-        // console.log(phone)
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="col style-cards">
@@ -56,9 +55,7 @@ const phoneDisplay = (phones) =>{
 }
 // -------Details button data lode------------//
 const phoneDetails = (phoneId) => {
-    // console.log(phoneId)
     const url = (`https://openapi.programming-hero.com/api/phone/${phoneId}`)
-    // console.log(url)
     fetch(url)
     .then(res => res.json())
     .then(data => showDetail(data.data))
