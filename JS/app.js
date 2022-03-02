@@ -15,6 +15,7 @@ const searchPhones = () => {
     fetch(`https://openapi.programming-hero.com/api/phones?search=${inputValue}`)
         .then(res => res.json())
         .then(data =>{
+          // -------error handling----------//
           if(data.data.length===0){
             error.innerText="No result found...!"
             // display clear
@@ -61,7 +62,7 @@ const phoneDetails = (phoneId) => {
     .then(data => showDetail(data.data))
 }
 const showDetail = (info)=>{
-  console.log(info);
+  // console.log(info);
     const phoneDetails = document.getElementById('phone-details');
     const div = document.createElement('div');
     div.classList.add('col')
@@ -87,11 +88,11 @@ const showDetail = (info)=>{
             </div>
             <div class="p-4 info-bg">
             <h5 class="text-center card-title fw-bold mb-4">OTHERS INFORMATION</h5>
-            <p class="card-text"> <span class="fw-bold">GPS :</span> ${info.others.GPS }</p>
-            <p class="card-text"> <span class="fw-bold">Bluetooth :</span> ${info.others.Bluetooth }</p>
-            <p class="card-text"> <span class="fw-bold">WLAN :</span> ${info.others.WLAN }</p>
-            <p class="card-text"> <span class="fw-bold">NFC :</span> ${info.others.NFC }</p>
-            <p class="card-text"> <span class="fw-bold">Radio :</span> ${info.others.Radio}</p>
+            <p class="card-text"> <span class="fw-bold">GPS :</span> ${info ?.others ?.GPS ? info.others.GPS:"GPS info not found"}</p>
+            <p class="card-text"> <span class="fw-bold">Bluetooth :</span> ${info ?.others ?.Bluetooth ? info.others.Bluetooth:"Bouetooth info not found" }</p>
+            <p class="card-text"> <span class="fw-bold">WLAN :</span> ${info ?.others ?.WLAN ? info.others.WLAN:"WLAN not found" }</p>
+            <p class="card-text"> <span class="fw-bold">NFC :</span> ${info ?.others ?.NFC ? info.others.NFC: "no data found" }</p>
+            <p class="card-text"> <span class="fw-bold">Radio :</span> ${info ?.others ?.Radio ? info.others.Radio : 'no data found'}</p>
             </div>
           </div>
         </div>
