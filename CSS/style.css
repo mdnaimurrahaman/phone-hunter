@@ -15,7 +15,7 @@ body{
 }
 /* button effect  and input value design*/
 .btn-slide{
-    background-color: #9dff00;
+    background-color: #d21a72;
     border-radius: 5px;
     color: white;
     border: none;
@@ -23,7 +23,7 @@ body{
     font-weight: 500;
 }
 .btn-slide:hover{
-    background-color: #d8f863;
+    background-color: #e04fa6;
     transition:all 0.3s ease;
 }
 
