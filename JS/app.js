@@ -6,7 +6,7 @@ const searchPhones = () => {
     if(inputValue === typeof 'number' || inputValue==''){
         error.innerText='please search by phone name...!';
         input.value='';
-        mainDiv.innerHTML="";
+        document.getElementById('main').innerHTML='';
     }
     else if(inputValue<0){
       error.innerText='please only search by phone name...!';
