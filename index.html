@@ -7,7 +7,7 @@
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;500;600;700;800&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- stylesheet -->
     <link rel="stylesheet" href="CSS/style.css">
     <!-- bootstrap style -->
@@ -23,18 +23,18 @@
             <img class="logo mb-1" src="img/2756308.png" alt="" srcset="">
         </div>
         <!-- search button -->
-        <div class="d-flex">
-            <input id="search-box" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button onclick="searchPhones()" id="search-btn" class="btn btn-outline-success" type="submit">Search</button>
+        <div class="d-flex w-75 m-auto">
+            <input id="search-box" class="form-control me-2" type="search" placeholder="Search your phone" aria-label="Search">
+            <button onclick="searchPhones()" id="search-btn" class=" btn-slide" type="submit">Search</button>
         </div>
         <!-- error text -->
-        <p class="text-danger" id="error"></p>
+        <p class="text-danger text-center fw-bold" id="error"></p>
         <!-- phone detail -->
-        <div class="pb-5 row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center my-3" id="phone-details">
+        <div class="pb-5 row row-cols-1 row-cols-md-2 g-4 d-flex justify-content-center my-3" id="phone-details">
 
         </div>
         <!-- Phones display -->
-        <div id="main" class="row row-cols-1 row-cols-md-3 g-4">
+        <div id="main" class="row row-cols-1 row-cols-md-3 g-4 ">
             
         </div>
     </div>

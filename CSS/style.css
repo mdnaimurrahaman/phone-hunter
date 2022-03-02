@@ -5,13 +5,26 @@ body{
 }
 /* logo align */
 .logo {
-    width: 300px;
+    width: 380px;
 }
 
 /* display phone boxshadow */
 .style-cards{
     /* background: #eeffb2; */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+/* button effect  and input value design*/
+.btn-slide{
+    background-color: #9dff00;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 500;
+}
+.btn-slide:hover{
+    background-color: #d8f863;
+    transition:all 0.3s ease;
 }
 
 /* details div bg color */
