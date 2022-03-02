@@ -7,6 +7,7 @@ const searchPhones = () => {
         error.innerText='please search by phone name...!';
         input.value='';
         document.getElementById('main').innerHTML='';
+        document.getElementById('phone-details').innerHTML='';
     }
     else if(inputValue<0){
       error.innerText='please only search by phone name...!';
