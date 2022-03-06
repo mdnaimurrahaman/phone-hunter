@@ -48,3 +48,9 @@ font-size: 60px;
 color: aliceblue;
 background-color: black;
 }
+
+.nevbar{
+display: flex;
+font-size: 20px;
+background-color: gray;
+}
