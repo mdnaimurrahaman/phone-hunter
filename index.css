@@ -17,3 +17,8 @@ color: wheat;
 font-size: 25px;
 
 }
+
+.side{
+display: flex;
+flex-direction: column;
+}
