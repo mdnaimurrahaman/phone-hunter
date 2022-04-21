@@ -22,7 +22,8 @@ font-size: 25px;
 display: flex;
 flex-direction: column;
 }
-. .side h1{
-font-size: 50px;
-color: aqua;
+
+.gap {
+display: grid;
+grid-template-columns: repeat(4 1fr);
 }
