@@ -11,3 +11,9 @@ color: wheat;
 display: flex;
 float: left;
 }
+
+.box h1{
+color: wheat;
+font-size: 25px;
+
+}
