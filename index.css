@@ -1,3 +1,8 @@
 body{
     background-color: aliceblue;
 }
+
+body h1{
+font-size: 20px;
+color: wheat;
+}
