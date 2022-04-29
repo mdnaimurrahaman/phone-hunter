@@ -49,8 +49,7 @@ color: aliceblue;
 background-color: black;
 }
 
-.nevbar{
+.side__box {
 display: flex;
-font-size: 20px;
-background-color: gray;
+flex: auto;
 }
