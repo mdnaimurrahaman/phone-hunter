@@ -16,6 +16,7 @@ const searchPhones = () => {
     fetch(`https://openapi.programming-hero.com/api/phones?search=${inputValue}`)
         .then(res => res.json())
         .then(data =>{
+          console.log(data)
           // -------error handling----------//
           if(data.data.length===0){
             error.innerText="No result found...!"
